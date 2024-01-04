@@ -7,12 +7,16 @@ import AddOns from "./pages/AddOns";
 import Summary from "./pages/Summary";
 import NotFound from "./pages/NotFound";
 import ThankYou from "./pages/ThankYou";
+import { PlansProvider } from "./context/PlansContext";
+import { AddOnsProvider } from "./context/AddOnsContext";
 
 function App() {
   return (
     <div className="App">
-    <BrowserRouter>
-          <div className="bg-white sm:w-[60rem] h-[35rem] mt-[100px] sm:mt-0 rounded-xl shadow-xl p-4 flex flex-col sm:flex sm:flex-row justify-between">
+    <PlansProvider>
+      <AddOnsProvider>
+        <BrowserRouter>
+          <div className="bg-white z-250 sm:w-[60rem] h-[35rem] mt-[100px] sm:mt-0 rounded-xl shadow-xl p-4 flex flex-col sm:flex sm:flex-row justify-between">
             <Sidebar />
             <Routes>
               <Route path="/" element={<PersonalInfo />} />
@@ -24,6 +28,8 @@ function App() {
             </Routes>
           </div>
         </BrowserRouter>
+      </AddOnsProvider>
+    </PlansProvider>
      </div> 
   );
 }

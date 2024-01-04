@@ -10,11 +10,12 @@ const Sidebar = () => {
         <div
         key={key}
         className="flex items-center space-x-4 leading-4 sm:mb-10">
-           {/* <NavLink
+           <NavLink
            style={({isActive})=>({
-            color:(isActive)?"#000" : "hsl(229, 24%, 87%)",
-            background:isActive? "none":"2px solid hsl(229, 24%, 87%)",
-            fontWeight: "500",
+               color:(isActive)?"#000" : "hsl(229, 24%, 87%)",
+               background:(isActive)? "hsl(229, 24%, 87%)":"transparent",
+               border:(isActive)? "none":"2px solid hsl(229, 24%, 87%)",
+               fontWeight: "500",
                 width: "2rem",
                 height: "2rem",
                 borderRadius: "50%",
@@ -24,8 +25,7 @@ const Sidebar = () => {
            })}
            to={items.linkTo}>
            {items.id}
-           </NavLink> */}
-           {items.id}
+           </NavLink>
            <div>
               <p className="hidden sm:block uppercase text-neutral-coolGray text-[14px]">
                 {items.step}
